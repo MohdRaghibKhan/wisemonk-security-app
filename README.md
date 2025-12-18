@@ -93,7 +93,7 @@ IMPORTANT:
 Before the first user registration, a default role must be created manually.
 
 Example:
-INSERT INTO roles (name) VALUES ('ROLE_USER');
+INSERT INTO roles (name) VALUES ('USER');
 
 --------------------------------------------------
 EVENT-DRIVEN DESIGN (RABBITMQ)
