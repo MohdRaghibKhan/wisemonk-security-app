@@ -38,28 +38,9 @@ public class HomeController {
 	        userService.register(request);
 	        return ResponseEntity.status(HttpStatus.CREATED).body("User registered");
 	    }
-	    
-//	    @PostMapping("/login")
-//		public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-//
-//	        User user = userRepo.findByEmail(request.getEmail())
-//	                .orElseThrow(() -> 
-//	                    new InvalidCredentialsException("Invalid email or password"));
-//
-//	        if (!encoder.matches(request.getPassword(), user.getPassword())) {
-//	            throw new InvalidCredentialsException("Invalid email or password");
-//	        }
-//
-//			Set<String> roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
-//
-//			String token = jwtUtil.generateToken(user.getEmail(), roles);
-//
-//			return ResponseEntity.ok(new AuthResponse(token));
-//		}
 
 	    @PostMapping("/login")
 	    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
-
 	        return ResponseEntity.ok(userService.login(request));
 	    }
 }

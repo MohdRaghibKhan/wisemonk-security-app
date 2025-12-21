@@ -20,5 +20,4 @@ public class UserController {
     public User getCurrentUser(Authentication auth) {
         return userRepo.findByEmail(auth.getName()).orElseThrow();
     }
-
 }
